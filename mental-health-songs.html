@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Booster Songs</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .song-section {
+            background-color: #000000; /* Light gray background */
+        }
+    
+        .song-box {
+            padding: 20px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #000000;
+        }
+    
+        .song-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(241, 3, 3, 0.521);
+        }
+    
+        .song-box img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 50%;
+        }
+    
+        .song-box h5 {
+            margin-top: 15px;
+            font-size: 1.25rem;
+            color: #044389;
+        }
+    
+        .song-box p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+    
+        .song-box .btn {
+            background-color: #363738;
+            border-color: #000000c8;
+        }
+    
+        .song-box .btn:hover {
+            background-color: #000000;
+            border-color: #2e72d7;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <section class="song-section py-5">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Mental Health Booster Songs</h2>
+                <p>Enjoy our curated list of songs to help boost your mood and mental health.</p>
+            </div>
+            <div class="row justify-content-center">
+                <!-- Song Box 1 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="song-box text-center">
+                        <img src="DOWNLOAD MP3 - Track_ Time to sleep (album 9 Dream and Sleep).jpeg" alt="Song 1" class="img-fluid mb-3">
+                        <h5>Song Title 1</h5>
+                        <p>Artist 1</p>
+                        <button class="btn btn-primary play-btn" data-audio="mental-health-music-psychology-therapy-mind-brain-background-intro-269378.mp3">Play</button>
+                        <audio id="audio1" src="mental-health-music-psychology-therapy-mind-brain-background-intro-269378.mp3"></audio>
+                    </div>
+                </div>
+                <!-- Song Box 2 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="song-box text-center">
+                        <img src="song2.jpg" alt="Song 2" class="img-fluid mb-3">
+                        <h5>Song Title 2</h5>
+                        <p>Artist 2</p>
+                        <button class="btn btn-primary play-btn" data-audio="song2.mp3">Play</button>
+                        <audio id="audio2" src="song2.mp3"></audio>
+                    </div>
+                </div>
+                 <!-- Song Box 2 -->
+                 <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="song-box text-center">
+                        <img src="song2.jpg" alt="Song 2" class="img-fluid mb-3">
+                        <h5>Song Title 2</h5>
+                        <p>Artist 2</p>
+                        <button class="btn btn-primary play-btn" data-audio="song2.mp3">Play</button>
+                        <audio id="audio2" src="song2.mp3"></audio>
+                    </div>
+                </div>
+                 <!-- Song Box 2 -->
+                 <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="song-box text-center">
+                        <img src="song2.jpg" alt="Song 2" class="img-fluid mb-3">
+                        <h5>Song Title 2</h5>
+                        <p>Artist 2</p>
+                        <button class="btn btn-primary play-btn" data-audio="song2.mp3">Play</button>
+                        <audio id="audio2" src="song2.mp3"></audio>
+                    </div>
+                </div>
+                 <!-- Song Box 2 -->
+                 <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="song-box text-center">
+                        <img src="song2.jpg" alt="Song 2" class="img-fluid mb-3">
+                        <h5>Song Title 2</h5>
+                        <p>Artist 2</p>
+                        <button class="btn btn-primary play-btn" data-audio="song2.mp3">Play</button>
+                        <audio id="audio2" src="song2.mp3"></audio>
+                    </div>
+                </div>
+                
+    </section>
+    
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const playButtons = document.querySelectorAll('.play-btn');
+    
+            playButtons.forEach((button) => {
+                button.addEventListener('click', (event) => {
+                    const audioId = button.getAttribute('data-audio');
+                    const audioElement = document.querySelector(`audio[src="${audioId}"]`);
+    
+                    if (audioElement.paused) {
+                        // Pause all other audio elements
+                        document.querySelectorAll('audio').forEach((audio) => {
+                            audio.pause();
+                            audio.currentTime = 0;
+                        });
+    
+                        // Play the selected audio
+                        audioElement.play();
+                        button.textContent = 'Pause';
+                    } else {
+                        // Pause the current audio
+                        audioElement.pause();
+                        button.textContent = 'Play';
+                    }
+    
+                    // Update other buttons' states
+                    playButtons.forEach((btn) => {
+                        if (btn !== button) {
+                            btn.textContent = 'Play';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
